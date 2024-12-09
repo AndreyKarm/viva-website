@@ -19,7 +19,7 @@ jobs:
           echo "${{ secrets.PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 152.70.18.93 >> ~/.ssh/known_hosts
+
       - name: Copy files to the server
         run: |
-          sudo -i
-          scp -o StrictHostKeyChecking=no -i "~/.ssh/id_rsa" -r ./* ubuntu@152.70.18.93:/var/www/viva
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* ubuntu@152.70.18.93:/var/www/viva
