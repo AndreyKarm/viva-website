@@ -22,4 +22,5 @@ jobs:
 
       - name: Copy files to the server
         run: |
-          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* ubuntu@152.70.18.93:/var/www/viva
+          sudo -i
+          scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./* ubuntu@152.70.18.93:/var/www/viva/viva-website
